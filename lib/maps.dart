@@ -35,12 +35,9 @@ class _MapsState extends State<Maps> {
     setState(() {
       _center = LatLng(currentLocation.latitude, currentLocation.longitude);
       _markers.add(Marker(
-        markerId: MarkerId("home"),
-        position: _center,
-        infoWindow: InfoWindow(
-          title: "Home!"
-        )
-      ));
+          markerId: MarkerId("home"),
+          position: _center,
+          infoWindow: InfoWindow(title: "Home!")));
     });
     print('center $_center');
   }
@@ -49,19 +46,36 @@ class _MapsState extends State<Maps> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('Maps Sample App'),
-          backgroundColor: Colors.green[700],
-        ),
         body: _center == null
             ? Center(child: CircularProgressIndicator())
-            : GoogleMap(
-                onMapCreated: _onMapCreated,
-                markers: _markers,
-                initialCameraPosition: CameraPosition(
-                  target: _center,
-                  zoom: 15.0,
-                ),
+            : Stack(
+                children: [
+                  GoogleMap(
+                    onMapCreated: _onMapCreated,
+                    markers: _markers,
+                    initialCameraPosition: CameraPosition(
+                      target: _center,
+                      zoom: 15.0,
+                    ),
+                  ),
+                  Positioned(
+                    top: 40.0,
+                    left: 10.0,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        shape: BoxShape.circle,
+                      ),
+                      child: Center(
+                        child: IconButton(
+                          iconSize: 20,
+                          icon: Icon(Icons.arrow_back, ),
+                          onPressed: () => Navigator.pop(context),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
       ),
     );
