@@ -54,13 +54,13 @@ class _MapsState extends State<Maps> {
           backgroundColor: Colors.green[700],
         ),
         body: _center == null
-            ? CircularProgressIndicator()
+            ? Center(child: CircularProgressIndicator())
             : GoogleMap(
                 onMapCreated: _onMapCreated,
                 markers: _markers,
                 initialCameraPosition: CameraPosition(
                   target: _center,
-                  zoom: 11.0,
+                  zoom: 15.0,
                 ),
               ),
       ),

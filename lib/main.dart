@@ -1,3 +1,4 @@
+import 'package:api_assignment/api_fetch.dart';
 import 'package:flutter/material.dart';
 
 import 'maps.dart';
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Maps(),
+      home: ApiFetch(),
     );
   }
 }
