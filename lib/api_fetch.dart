@@ -53,7 +53,7 @@ class _ApiFetchState extends State<ApiFetch> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('User List'),
+        title: Text('Github List'),
       ),
       body: Container(
           child: ListView.builder(
