@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'package:share/share.dart';
 
@@ -76,8 +77,8 @@ class _ApiFetchState extends State<ApiFetch> {
                         leading: CircleAvatar(
                             radius: 30,
                             backgroundImage: NetworkImage(item['avatar'])),
-                        title: Text(_name(item)),
-                        subtitle: Text(_description(item)),
+                        title: Text(_name(item), style: GoogleFonts.raleway(fontSize: 25.0)),
+                        subtitle: Text(_description(item), style: GoogleFonts.inconsolata(fontSize: 15.0),),
                         trailing: Text(_language(item)),
                       ),
                     ),
