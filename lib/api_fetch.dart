@@ -46,7 +46,7 @@ class _ApiFetchState extends State<ApiFetch> {
 
   void shareData(String name, String description, String language) {
     Share.share(
-        'Name: ${name} \n Description: ${description} \n Language: ${language}');
+        'Name: ${name} \n Description: ${description} \n ${language}');
   }
 
   @override
