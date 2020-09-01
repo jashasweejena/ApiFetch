@@ -69,21 +69,18 @@ class _ApiFetchState extends State<ApiFetch> {
                   child: Container(
                     padding: EdgeInsets.only(bottom: 10.0),
                     color: Colors.white,
-                    child: Card(
-                      elevation: 1.0,
-                      child: ListTile(
-                        onTap: () => Navigator.of(context).push(
-                            MaterialPageRoute(builder: (context) => Maps())),
-                        leading: CircleAvatar(
-                            radius: 30,
-                            backgroundImage: NetworkImage(item['avatar'])),
-                        title: Text(_name(item), style: GoogleFonts.raleway(fontSize: 25.0)),
-                        subtitle: Text(_description(item), style: GoogleFonts.inconsolata(fontSize: 15.0),),
-                        trailing: Text(_language(item)),
-                      ),
+                    child: ListTile(
+                      onTap: () => Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) => Maps())),
+                      leading: CircleAvatar(
+                          radius: 30,
+                          backgroundImage: NetworkImage(item['avatar'])),
+                      title: Text(_name(item), style: GoogleFonts.raleway(fontSize: 25.0)),
+                      subtitle: Text(_description(item), style: GoogleFonts.inconsolata(fontSize: 15.0),),
+                      trailing: Text(_language(item)),
                     ),
                   ),
-                  actions: [
+                  secondaryActions: [
                     IconSlideAction(
                       caption: "Delete",
                       color: Colors.red,
